@@ -1,0 +1,16 @@
+---
+- hosts: all
+  sudo: true
+  pre_tasks:
+    - name: update apt cache
+      apt: update_cache=yes
+  roles:
+  - azavea.java
+  - azavea.zookeeper
+  vars:
+    zookeeper_java_opts: export JVMFLAGS="-Xmx256m -Xms256m"
+    zookeeper_version: 3.4.5+cdh5.4.0+84-1.cdh5.4.0.p0.46~trusty-cdh5.4.0
+    zookeeper_servers:
+    - { index: "1", ip: "192.168.39.31", ports: "2888:3888" }
+    - { index: "2", ip: "192.168.39.32", ports: "2888:3888" }
+    - { index: "3", ip: "192.168.39.33", ports: "2888:3888" }

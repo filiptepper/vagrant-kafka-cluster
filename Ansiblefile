@@ -1,0 +1,5 @@
+site "https://galaxy.ansible.com/api/v1"
+
+role "azavea.java"
+role "azavea.zookeeper", github: "filiptepper/ansible-zookeeper", ref: "develop"
+role "tkuhlman.kafka", github: "filiptepper/ansible-kafka"
