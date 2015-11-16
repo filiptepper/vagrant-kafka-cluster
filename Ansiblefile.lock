@@ -1,19 +1,21 @@
 GIT
   remote: https://github.com/azavea/ansible-java
   ref: master
-  sha: fae3bceb50ac64f41dbd848b461119c3c8c7219a
+  sha: 0dbfb5619b8fae9cc09a4a14c8db71e5c0c38abf
   specs:
     azavea.java (0.0.0)
 
 GIT
-  remote: https://github.com/filiptepper/ansible-zookeeper
-  ref: develop
-  sha: be7cc6beedc0bc3772fbbd04804249101f5ef154
+  remote: https://github.com/azavea/ansible-zookeeper
+  ref: master
+  sha: 2ef03099d0bbcd99bbcc81c959943a2a52b14fea
   specs:
     azavea.zookeeper (0.0.0)
 
-PATH
-  remote: ../ansible-kafka
+GIT
+  remote: https://github.com/filiptepper/ansible-kafka
+  ref: master
+  sha: 3033af51d37f5aa385f7d5a48f7b307c7fc92c88
   specs:
     tkuhlman.kafka (0.0.0)
 
