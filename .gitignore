@@ -1,3 +1,5 @@
 /librarian_roles
 /tmp
 /.vagrant
+.bundle
+vendor/bundle
