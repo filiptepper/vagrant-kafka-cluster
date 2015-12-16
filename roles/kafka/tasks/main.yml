@@ -1,0 +1,44 @@
+---
+- name: create zookeeper data directory
+  sudo: true
+  file:
+    state: directory
+    dest: "/var/lib/zookeeper/"
+    mode: 0755
+    owner: root
+    group: root
+
+- name: create myid file for zookeeper
+  sudo: true
+  copy:
+    content: "{{ zookeeper_myid }}"
+    dest: "/var/lib/zookeeper/myid"
+    mode: 0755
+    owner: root
+    group: root
+
+- name: configure zookeeper
+  sudo: true
+  template:
+    src: zookeeper.properties.j2
+    dest: /etc/kafka/zookepeer.properties
+    mode: 0755
+    owner: root
+    group: root
+
+- name: configure kafka
+  sudo: true
+  template:
+    src: kafka.properties.j2
+    dest: /etc/kafka/kafka.properties
+    mode: 0755
+    owner: root
+    group: root
+
+- name: run zookeeper
+  sudo: true
+  shell: "KAFKA_HEAP_OPTS=\"{{ kafka_heap_opts}}\" /usr/bin/zookeeper-server-start -daemon /etc/kafka/zookeeper.properties"
+
+- name: run kafka
+  sudo: true
+  shell: "KAFKA_HEAP_OPTS=\"{{ kafka_heap_opts}}\" /usr/bin/kafka-server-start -daemon /etc/kafka/kafka.properties"

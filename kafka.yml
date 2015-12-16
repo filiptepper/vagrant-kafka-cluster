@@ -5,9 +5,13 @@
     - name: update apt cache
       apt: update_cache=yes
   roles:
-  - tkuhlman.kafka
+  - azavea.java
+  - filiptepper.confluent-platform
+  - kafka
   vars:
+    java_version: "7u91*"
+
     kafka_heap_opts: "-Xmx256m -Xms256m"
-    kafka_version: "0.9.0.0"
+
     kafka_hosts: "192.168.39.31:9092,192.168.39.32:9092,192.168.39.33:9092"
     zookeeper_hosts: "192.168.39.31:2181,192.168.39.32:2181,192.168.39.33:2181"

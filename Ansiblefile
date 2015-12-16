@@ -1,5 +1,4 @@
 site "https://galaxy.ansible.com/api/v1"
 
 role "azavea.java"
-role "azavea.zookeeper"
-role "tkuhlman.kafka", github: "filiptepper/ansible-kafka"
+role "filiptepper.confluent-platform", github: "filiptepper/ansible-confluent-platform"

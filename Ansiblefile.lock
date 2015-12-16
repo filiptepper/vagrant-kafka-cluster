@@ -6,21 +6,13 @@ GIT
     azavea.java (0.0.0)
 
 GIT
-  remote: https://github.com/azavea/ansible-zookeeper
+  remote: https://github.com/filiptepper/ansible-confluent-platform
   ref: master
-  sha: 2ef03099d0bbcd99bbcc81c959943a2a52b14fea
+  sha: 852869941c1fd3350c52d35214e011201b9b67a7
   specs:
-    azavea.zookeeper (0.0.0)
-
-GIT
-  remote: https://github.com/filiptepper/ansible-kafka
-  ref: master
-  sha: 3033af51d37f5aa385f7d5a48f7b307c7fc92c88
-  specs:
-    tkuhlman.kafka (0.0.0)
+    filiptepper.confluent-platform (0.1.0)
 
 DEPENDENCIES
   azavea.java (>= 0)
-  azavea.zookeeper (>= 0)
-  tkuhlman.kafka (>= 0)
+  filiptepper.confluent-platform (>= 0)
 

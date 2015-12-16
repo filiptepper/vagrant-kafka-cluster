@@ -19,10 +19,6 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.provision "ansible" do |ansible|
-    ansible.playbook = "zookeeper.yml"
-  end if ENV['ZOOKEEPER'] == '1'
-
-  config.vm.provision "ansible" do |ansible|
     ansible.playbook = "kafka.yml"
-  end if ENV['KAFKA'] == '1'
+  end
 end

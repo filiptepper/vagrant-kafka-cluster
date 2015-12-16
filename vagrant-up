@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 
 vagrant up --no-provision
-ZOOKEEPER=1 vagrant provision
-KAFKA=1 vagrant provision
+vagrant provision
