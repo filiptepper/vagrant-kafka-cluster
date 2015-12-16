@@ -3,7 +3,7 @@ Vagrant.configure("2") do |config|
   config.vm.box_check_update = false
 
   config.vm.provider :virtualbox do |virtualbox|
-    virtualbox.memory                = 1024
+    virtualbox.memory                = 2048
     virtualbox.check_guest_additions = false
     virtualbox.functional_vboxsf     = false
   end
