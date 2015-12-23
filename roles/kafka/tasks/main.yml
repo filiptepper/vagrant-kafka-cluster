@@ -35,10 +35,20 @@
     owner: root
     group: root
 
-# - name: run zookeeper
-#   sudo: true
-#   shell: "KAFKA_HEAP_OPTS=\"{{ kafka_heap_opts}}\" /usr/bin/zookeeper-server-start -daemon /etc/kafka/zookeeper.properties"
+- name: add zookeeper-runner
+  sudo: true
+  template:
+    src: zookeeper-runner.j2
+    dest: /usr/bin/zookeeper-runner
+    mode: 0755
+    owner: root
+    group: root
 
-# - name: run kafka
-#   sudo: true
-#   shell: "KAFKA_HEAP_OPTS=\"{{ kafka_heap_opts}}\" /usr/bin/kafka-server-start -daemon /etc/kafka/kafka.properties"
+- name: add kafka-runner
+  sudo: true
+  template:
+    src: kafka-runner.j2
+    dest: /usr/bin/kafka-runner
+    mode: 0755
+    owner: root
+    group: root
