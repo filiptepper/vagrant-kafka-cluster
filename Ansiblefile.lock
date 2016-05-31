@@ -1,16 +1,16 @@
 GIT
   remote: https://github.com/azavea/ansible-java
   ref: master
-  sha: 0dbfb5619b8fae9cc09a4a14c8db71e5c0c38abf
+  sha: 4c4756531e1e5abf37b06aee49c3908a3073c737
   specs:
     azavea.java (0.0.0)
 
 GIT
   remote: https://github.com/filiptepper/ansible-confluent-platform
   ref: master
-  sha: 852869941c1fd3350c52d35214e011201b9b67a7
+  sha: a14bfe2a92c9b4cfbe298b3841990dde3f69b86a
   specs:
-    filiptepper.confluent-platform (0.1.0)
+    filiptepper.confluent-platform (0.0.0)
 
 DEPENDENCIES
   azavea.java (>= 0)
