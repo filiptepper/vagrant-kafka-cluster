@@ -1,0 +1,12 @@
+---
+- name: restart zookeeper
+  run_once: true
+  service:
+    name: zookeeper
+    state: restarted
+
+- name: restart kafka
+  run_once: true
+  service:
+    name: kafka
+    state: restarted

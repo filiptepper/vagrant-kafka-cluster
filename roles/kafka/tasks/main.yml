@@ -17,14 +17,24 @@
     owner: root
     group: root
 
+- name: create /etc/kafka directory
+  sudo: true
+  file:
+    path: /etc/kafka
+    state: directory
+    mode: 0755
+    owner: root
+    group: root
+
 - name: configure zookeeper
   sudo: true
   template:
     src: zookeeper.properties.j2
-    dest: /etc/kafka/zookepeer.properties
+    dest: /etc/kafka/zookeeper.properties
     mode: 0755
     owner: root
     group: root
+  notify: restart zookeeper
 
 - name: configure kafka
   sudo: true
@@ -34,6 +44,7 @@
     mode: 0755
     owner: root
     group: root
+  notify: restart kafka
 
 - name: add zookeeper-runner
   sudo: true
@@ -43,6 +54,7 @@
     mode: 0755
     owner: root
     group: root
+  notify: restart zookeeper
 
 - name: add kafka-runner
   sudo: true
@@ -52,3 +64,24 @@
     mode: 0755
     owner: root
     group: root
+  notify: restart kafka
+
+- name: add zookeeper service
+  sudo: true
+  template:
+    src: zookeeper.conf.j2
+    dest: /etc/init/zookeeper.conf
+    mode: 0755
+    owner: root
+    group: root
+  notify: restart zookeeper
+
+- name: add kafka service
+  sudo: true
+  template:
+    src: kafka.conf.j2
+    dest: /etc/init/kafka.conf
+    mode: 0755
+    owner: root
+    group: root
+  notify: restart kafka

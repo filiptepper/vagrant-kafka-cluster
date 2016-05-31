@@ -1,0 +1,12 @@
+# kafka - Kafka
+
+description "kafka"
+
+start on started zookeeper
+stop on runlevel [!2345]
+
+respawn
+
+script
+  /bin/bash -c '/usr/bin/kafka-runner'
+end script
