@@ -7,7 +7,7 @@ GEM
     librarian (0.1.2)
       highline
       thor (~> 0.15)
-    librarian-ansible (1.0.6)
+    librarian-ansible (3.0.0)
       faraday
       librarian (~> 0.1.0)
     multipart-post (2.0.0)
@@ -17,7 +17,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  librarian-ansible (~> 1.0.6)
+  librarian-ansible (~> 3.0.0)
 
 BUNDLED WITH
-   1.10.6
+   1.11.2
