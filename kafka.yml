@@ -9,7 +9,9 @@
   - filiptepper.confluent-platform
   - kafka
   vars:
-    java_version: "7u91*"
+    java_version: "7u101*"
+
+    confluent_platform_install_platform_oss: true
 
     kafka_heap_opts: "-Xmx256m -Xms256m"
 
