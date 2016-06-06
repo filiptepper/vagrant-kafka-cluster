@@ -1,0 +1,12 @@
+# schema-registry - Schema Registry
+
+description "schema-registry"
+
+start on started kafka
+stop on runlevel [!2345]
+
+respawn
+
+script
+  /bin/bash -c '/usr/bin/schema-registry-runner'
+end script

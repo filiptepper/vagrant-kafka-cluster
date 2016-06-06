@@ -10,3 +10,9 @@
   service:
     name: kafka
     state: restarted
+
+- name: restart schema registry
+  run_once: true
+  service:
+    name: schema-registry
+    state: restarted

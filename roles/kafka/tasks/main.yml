@@ -46,6 +46,16 @@
     group: root
   notify: restart kafka
 
+- name: configure schema registry
+  sudo: true
+  template:
+    src: schema-registry.properties.j2
+    dest: /etc/kafka/schema-registry.properties
+    mode: 0755
+    owner: root
+    group: root
+  notify: restart schema-registry
+
 - name: add zookeeper-runner
   sudo: true
   template:
@@ -66,6 +76,16 @@
     group: root
   notify: restart kafka
 
+- name: add schema-registry-runner
+  sudo: true
+  template:
+    src: schema-registry-runner.j2
+    dest: /usr/bin/schema-registry-runner
+    mode: 0755
+    owner: root
+    group: root
+  notify: restart schema-registry
+
 - name: add zookeeper service
   sudo: true
   template:
@@ -85,3 +105,13 @@
     owner: root
     group: root
   notify: restart kafka
+
+- name: add schema registry service
+  sudo: true
+  template:
+    src: schema-registry.conf.j2
+    dest: /etc/init/schema-registry.conf
+    mode: 0755
+    owner: root
+    group: root
+  notify: restart schema-registry
